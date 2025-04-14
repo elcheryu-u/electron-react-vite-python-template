@@ -1,0 +1,48 @@
+{
+  "name": "test4",
+  "productName": "test4",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/electron/main.js",
+  "scripts": {
+    "start": "vite build && electron-forge start",
+    "package": "npm run build:python && npm run build && electron-forge package",
+    "dev": "npm-run-all --parallel dev:python dev:react dev:electron",
+    "dev:react": "vite",
+    "dev:electron": "cross-env NODE_ENV=development electron .",
+    "dev:python": "python ./backend/app.py",
+    "build": "vite build",
+    "build:python": "cd backend && python -m PyInstaller app.spec && cd ..",
+    "preview": "vite preview",
+    "electron": "electron src/main.js",
+    "make": "npm run build:python && npm run build && electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "elchery",
+    "email": "79613492+elcheryu-u@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.8.0",
+    "@electron-forge/maker-deb": "^7.8.0",
+    "@electron-forge/maker-rpm": "^7.8.0",
+    "@electron-forge/maker-squirrel": "^7.8.0",
+    "@electron-forge/maker-zip": "^7.8.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.0",
+    "@electron-forge/plugin-fuses": "^7.8.0",
+    "@electron/fuses": "^1.8.0",
+    "cross-env": "^7.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "npm-run-all": "^4.1.5",
+    "electron": "35.1.5",
+    "vite": "^6.2.6"
+  }
+}
