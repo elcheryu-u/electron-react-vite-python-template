@@ -7,7 +7,7 @@ CORS(app)
 @app.route('/api/tools', methods=['GET'])
 def get_tools():
     tools = [
-        {"name": "Carving Knife", "use": "For shaping and detailing wood"},
+        {"name": "adsasdas Knifssses", "use": "For shaping and detailing wood"},
         {"name": "Gouge", "use": "For scooping out wood"},
         {"name": "Chisel", "use": "For cutting straight lines"}
     ]
@@ -29,4 +29,4 @@ def get_test():
     return jsonify(tips)
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(debug=True, port=5000)

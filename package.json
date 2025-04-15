@@ -1,8 +1,8 @@
 {
-  "name": "test4",
+  "name": "electron-vite-react-python-template",
   "productName": "test4",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "",
   "main": "src/electron/main.js",
   "scripts": {
     "start": "vite build && electron-forge start",
@@ -13,6 +13,7 @@
     "dev:python": "python ./backend/app.py",
     "build": "vite build",
     "build:python": "cd backend && python -m PyInstaller app.spec && cd ..",
+    "update:python": "cd backend && pip install -r requirements.txt && cd ..",
     "preview": "vite preview",
     "electron": "electron src/main.js",
     "make": "npm run build:python && npm run build && electron-forge make",
