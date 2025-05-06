@@ -1,5 +1,6 @@
-from flask import Flask, jsonify
-from flask_cors import CORS
+from flask import Flask, jsonify, request, render_template
+from flask_cors import CORS 
+from product import add_item1
 
 app = Flask(__name__)
 CORS(app)
@@ -27,6 +28,8 @@ def get_test():
         {"tip": "testsss", "description": "test3"},
     ]
     return jsonify(tips)
+
+add_item1
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
